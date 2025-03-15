@@ -1,290 +1,267 @@
 [
   {
-    "id": "103cf4f2-42a0-419f-b452-903a74d1d907",
-    "name": "John Smith",
+    "id": "9a8b86c4-5560-402f-ae41-6b9f969474b9",
+    "name": "Player 1",
     "teamId": "1",
-    "startingWeight": 79.8,
-    "height": 179,
-    "weight": 77.9,
-    "BMI": 24.3
-  },
-  {
-    "id": "86890869-0916-4196-8b19-a9790a2118dd",
-    "name": "Alex Johnson",
-    "teamId": "2",
-    "startingWeight": 97.5,
-    "height": 181,
-    "weight": 93.1,
-    "BMI": 28.4
-  },
-  {
-    "id": "570c3a1a-0538-4f2f-a8a8-12dd3d733827",
-    "name": "Chris Williams",
-    "teamId": "3",
-    "startingWeight": 100.4,
-    "height": 180,
-    "weight": 96.6,
-    "BMI": 29.8
-  },
-  {
-    "id": "75c6eecd-9bb5-4ac1-9e1b-a2a2d6980430",
-    "name": "Jordan Brown",
-    "teamId": "4",
-    "startingWeight": 94.7,
-    "height": 185,
-    "weight": 90.3,
-    "BMI": 26.4
-  },
-  {
-    "id": "7864f8cb-e188-418c-a890-fa7c309bc78d",
-    "name": "Michael Davis",
-    "teamId": "1",
-    "startingWeight": 99.5,
-    "height": 190,
-    "weight": 94.6,
-    "BMI": 26.2
-  },
-  {
-    "id": "a30234c9-3537-4217-8fa2-b3ee1ce7fb4a",
-    "name": "Kevin Martinez",
-    "teamId": "2",
-    "startingWeight": 102.0,
-    "height": 172,
-    "weight": 99.2,
-    "BMI": 33.5
-  },
-  {
-    "id": "c95c3a86-5bf5-4c6f-b925-c57080ef6bbf",
-    "name": "Ryan Taylor",
-    "teamId": "3",
-    "startingWeight": 95.1,
-    "height": 166,
-    "weight": 92.0,
-    "BMI": 33.4
-  },
-  {
-    "id": "fd258f82-cf30-4574-957d-1bed769977cc",
-    "name": "Ethan Moore",
-    "teamId": "4",
-    "startingWeight": 101.4,
-    "height": 166,
-    "weight": 98.1,
-    "BMI": 35.6
-  },
-  {
-    "id": "e9c2fef3-3de9-49ef-8508-a6b2e63539e1",
-    "name": "Jake Anderson",
-    "teamId": "1",
-    "startingWeight": 93.9,
-    "height": 167,
-    "weight": 91.1,
-    "BMI": 32.7
-  },
-  {
-    "id": "c84271d6-baee-4d1e-b30a-7933a95a4e86",
-    "name": "Luke Hernandez",
-    "teamId": "2",
-    "startingWeight": 89.5,
-    "height": 171,
-    "weight": 88.8,
-    "BMI": 30.4
-  },
-  {
-    "id": "afc65287-1dbb-4341-87c7-6397c549fcff",
-    "name": "Adam White",
-    "teamId": "3",
-    "startingWeight": 102.6,
-    "height": 191,
-    "weight": 101.0,
-    "BMI": 27.7
-  },
-  {
-    "id": "df35e1ff-ecef-481c-824e-08a134b4d4bf",
-    "name": "Tyler Harris",
-    "teamId": "4",
-    "startingWeight": 92.5,
-    "height": 186,
-    "weight": 90.2,
-    "BMI": 26.1
-  },
-  {
-    "id": "d29a9f82-5a3b-4a6b-8cb4-1d1c03c0ba48",
-    "name": "Oscar Lee",
-    "teamId": "1",
-    "startingWeight": 91.1,
-    "height": 180,
-    "weight": 90.9,
-    "BMI": 28.1
-  },
-  {
-    "id": "5f6da864-7e0b-4b70-bbd2-9c9a9d60f837",
-    "name": "Daniel Walker",
-    "teamId": "2",
-    "startingWeight": 102.2,
-    "height": 172,
-    "weight": 97.2,
-    "BMI": 32.9
-  },
-  {
-    "id": "c2f4a190-1b07-4ec6-b0bc-cf8f88e19765",
-    "name": "Matthew Hall",
-    "teamId": "3",
-    "startingWeight": 75.1,
-    "height": 182,
-    "weight": 70.5,
-    "BMI": 21.3
-  },
-  {
-    "id": "cb2e9810-bec1-44ae-9436-73051e86d44b",
-    "name": "Nathan Allen",
-    "teamId": "4",
-    "startingWeight": 101.8,
-    "height": 192,
-    "weight": 99.5,
-    "BMI": 27.0
-  },
-  {
-    "id": "28353923-d18d-4486-9fb1-03ba36774668",
-    "name": "David Young",
-    "teamId": "1",
-    "startingWeight": 85.9,
-    "height": 173,
-    "weight": 81.6,
-    "BMI": 27.3
-  },
-  {
-    "id": "78cd9710-0047-4651-b392-1b823788801f",
-    "name": "James King",
-    "teamId": "2",
-    "startingWeight": 94.8,
-    "height": 173,
-    "weight": 91.1,
-    "BMI": 30.4
-  },
-  {
-    "id": "1800701e-563b-4efa-a640-0688efd80f8c",
-    "name": "Liam Scott",
-    "teamId": "3",
-    "startingWeight": 103.3,
+    "baselineWeight": 82.2,
+    "seasonStartWeight": 74.8,
     "height": 170,
-    "weight": 98.7,
-    "BMI": 34.2
+    "weight": 73.5,
+    "BMI": 25.4,
+    "BMI_Target": 72.2,
+    "percentLost": 1.7,
+    "milestones": {}
   },
   {
-    "id": "68421db2-2692-41e2-a311-4d5ce4699da6",
-    "name": "Samuel Green",
-    "teamId": "4",
-    "startingWeight": 81.1,
-    "height": 165,
-    "weight": 76.2,
-    "BMI": 28.0
-  },
-  {
-    "id": "5f86acc4-14b1-4166-a9b3-a835a1d477e3",
-    "name": "Benjamin Adams",
-    "teamId": "1",
-    "startingWeight": 102.6,
-    "height": 169,
-    "weight": 101.5,
-    "BMI": 35.5
-  },
-  {
-    "id": "6f8d0977-7c13-4759-8111-d261cc67e415",
-    "name": "Jacob Carter",
+    "id": "80a6c917-94b2-456e-8f77-f54798078d27",
+    "name": "Player 2",
     "teamId": "2",
-    "startingWeight": 85.9,
-    "height": 181,
-    "weight": 81.3,
-    "BMI": 24.8
+    "baselineWeight": 107.7,
+    "seasonStartWeight": 105.3,
+    "height": 175,
+    "weight": 102.0,
+    "BMI": 33.3,
+    "BMI_Target": 76.6,
+    "percentLost": 3.1,
+    "milestones": {
+      "5%": 100.0,
+      "10%": 94.8,
+      "15%": 89.5,
+      "20%": 84.2
+    }
   },
   {
-    "id": "6c70ce62-91d6-4531-bf94-108dc5a55652",
-    "name": "Jack Nelson",
+    "id": "33bb16b5-2124-41c2-9288-de270417fcc4",
+    "name": "Player 3",
     "teamId": "3",
-    "startingWeight": 80.4,
-    "height": 191,
-    "weight": 79.1,
-    "BMI": 21.7
+    "baselineWeight": 80.8,
+    "seasonStartWeight": 78.9,
+    "height": 170,
+    "weight": 78.7,
+    "BMI": 27.2,
+    "BMI_Target": 72.2,
+    "percentLost": 0.3,
+    "milestones": {
+      "5%": 75.0
+    }
   },
   {
-    "id": "0ae0546d-13d0-48ac-90c7-ec8e31b9a61b",
-    "name": "Andrew Baker",
+    "id": "0b2586b1-08bf-4cf0-a4c0-42cfe4dcb9c5",
+    "name": "Player 4",
     "teamId": "4",
-    "startingWeight": 100.9,
-    "height": 191,
-    "weight": 99.3,
-    "BMI": 27.2
-  },
-  {
-    "id": "c8b5987d-3271-4985-8122-667e788e1559",
-    "name": "Logan Wright",
-    "teamId": "1",
-    "startingWeight": 103.5,
-    "height": 186,
-    "weight": 100.8,
-    "BMI": 29.1
-  },
-  {
-    "id": "e98a590f-3d5d-4265-9690-dff0a79a7e77",
-    "name": "Evan Perez",
-    "teamId": "2",
-    "startingWeight": 81.8,
-    "height": 188,
-    "weight": 77.6,
-    "BMI": 22.0
-  },
-  {
-    "id": "9cc79cc7-86d3-4650-ad17-28be9387ee34",
-    "name": "Noah Cooper",
-    "teamId": "3",
-    "startingWeight": 79.3,
-    "height": 174,
-    "weight": 76.6,
-    "BMI": 25.3
-  },
-  {
-    "id": "910cdc53-1339-40da-8c81-f754dbac077d",
-    "name": "Caleb Bell",
-    "teamId": "4",
-    "startingWeight": 96.7,
-    "height": 172,
-    "weight": 96.1,
-    "BMI": 32.5
-  },
-  {
-    "id": "dceb7aa6-2449-4efe-beec-94bd5a5b93a9",
-    "name": "Aaron Reed",
-    "teamId": "1",
-    "startingWeight": 109.7,
-    "height": 165,
-    "weight": 104.9,
-    "BMI": 38.5
-  },
-  {
-    "id": "4153403b-cb66-4190-9346-4932a56d245a",
-    "name": "Isaac Stewart",
-    "teamId": "2",
-    "startingWeight": 79.3,
-    "height": 169,
-    "weight": 75.5,
-    "BMI": 26.4
-  },
-  {
-    "id": "0b35c0bd-8cd9-4298-977a-20d5d3a1d334",
-    "name": "Connor Morris",
-    "teamId": "3",
-    "startingWeight": 103.1,
-    "height": 174,
-    "weight": 102.7,
-    "BMI": 33.9
-  },
-  {
-    "id": "e9a3f92e-0a3d-47f0-8a5e-728bb2fff977",
-    "name": "Elijah Rogers",
-    "teamId": "4",
-    "startingWeight": 94.0,
+    "baselineWeight": 88.8,
+    "seasonStartWeight": 88.2,
     "height": 173,
-    "weight": 92.9,
-    "BMI": 31.0
+    "weight": 84.1,
+    "BMI": 28.1,
+    "BMI_Target": 74.8,
+    "percentLost": 4.6,
+    "milestones": {
+      "5%": 83.8,
+      "10%": 79.4,
+      "15%": 75.0
+    }
+  },
+  {
+    "id": "18cb864a-62b8-4143-8d75-a8d11dcbd44b",
+    "name": "Player 5",
+    "teamId": "1",
+    "baselineWeight": 111.2,
+    "seasonStartWeight": 104.6,
+    "height": 177,
+    "weight": 101.4,
+    "BMI": 32.4,
+    "BMI_Target": 78.3,
+    "percentLost": 3.1,
+    "milestones": {
+      "5%": 99.4,
+      "10%": 94.1,
+      "15%": 88.9,
+      "20%": 83.7
+    }
+  },
+  {
+    "id": "eee713c5-292c-4cd8-93a4-d74187be442e",
+    "name": "Player 6",
+    "teamId": "2",
+    "baselineWeight": 82.5,
+    "seasonStartWeight": 75.0,
+    "height": 168,
+    "weight": 71.4,
+    "BMI": 25.3,
+    "BMI_Target": 70.6,
+    "percentLost": 4.8,
+    "milestones": {
+      "5%": 71.2
+    }
+  },
+  {
+    "id": "aba14558-f675-45ad-967b-c8d5fd3c28ee",
+    "name": "Player 7",
+    "teamId": "3",
+    "baselineWeight": 77.4,
+    "seasonStartWeight": 74.9,
+    "height": 167,
+    "weight": 72.6,
+    "BMI": 26.0,
+    "BMI_Target": 69.7,
+    "percentLost": 3.1,
+    "milestones": {
+      "5%": 71.2
+    }
+  },
+  {
+    "id": "f7af7a8a-c1d4-4316-8d41-058d6f21fc56",
+    "name": "Player 8",
+    "teamId": "4",
+    "baselineWeight": 121.3,
+    "seasonStartWeight": 112.4,
+    "height": 177,
+    "weight": 112.1,
+    "BMI": 35.8,
+    "BMI_Target": 78.3,
+    "percentLost": 0.3,
+    "milestones": {
+      "5%": 106.8,
+      "10%": 101.2,
+      "15%": 95.5,
+      "20%": 89.9
+    }
+  },
+  {
+    "id": "fff976dc-3eed-45fa-8f2f-69a2fd54672d",
+    "name": "Player 9",
+    "teamId": "1",
+    "baselineWeight": 114.7,
+    "seasonStartWeight": 108.2,
+    "height": 177,
+    "weight": 107.6,
+    "BMI": 34.3,
+    "BMI_Target": 78.3,
+    "percentLost": 0.6,
+    "milestones": {
+      "5%": 102.8,
+      "10%": 97.4,
+      "15%": 92.0,
+      "20%": 86.6
+    }
+  },
+  {
+    "id": "cd8af48b-d3ca-4872-aeda-68ef47b4f4ca",
+    "name": "Player 10",
+    "teamId": "2",
+    "baselineWeight": 89.0,
+    "seasonStartWeight": 87.8,
+    "height": 177,
+    "weight": 84.8,
+    "BMI": 27.1,
+    "BMI_Target": 78.3,
+    "percentLost": 3.4,
+    "milestones": {
+      "5%": 83.4,
+      "10%": 79.0
+    }
+  },
+  {
+    "id": "46ce4cd5-ebf9-4ed5-88cb-26b22f8dcd30",
+    "name": "Player 11",
+    "teamId": "3",
+    "baselineWeight": 100.6,
+    "seasonStartWeight": 98.9,
+    "height": 182,
+    "weight": 97.5,
+    "BMI": 29.4,
+    "BMI_Target": 82.8,
+    "percentLost": 1.4,
+    "milestones": {
+      "5%": 94.0,
+      "10%": 89.0,
+      "15%": 84.1
+    }
+  },
+  {
+    "id": "03514518-e503-4d44-a714-458e321825d5",
+    "name": "Player 12",
+    "teamId": "4",
+    "baselineWeight": 115.9,
+    "seasonStartWeight": 109.2,
+    "height": 174,
+    "weight": 104.6,
+    "BMI": 34.5,
+    "BMI_Target": 75.7,
+    "percentLost": 4.2,
+    "milestones": {
+      "5%": 103.7,
+      "10%": 98.3,
+      "15%": 92.8,
+      "20%": 87.4
+    }
+  },
+  {
+    "id": "56bfde59-047f-47d5-b3b9-d93f7d8907ce",
+    "name": "Player 13",
+    "teamId": "1",
+    "baselineWeight": 79.1,
+    "seasonStartWeight": 73.6,
+    "height": 168,
+    "weight": 70.0,
+    "BMI": 24.8,
+    "BMI_Target": 70.6,
+    "percentLost": 4.9,
+    "milestones": {}
+  },
+  {
+    "id": "ce600cd0-9214-4e57-90be-350c16c741cc",
+    "name": "Player 14",
+    "teamId": "2",
+    "baselineWeight": 92.4,
+    "seasonStartWeight": 89.2,
+    "height": 167,
+    "weight": 88.0,
+    "BMI": 31.6,
+    "BMI_Target": 69.7,
+    "percentLost": 1.3,
+    "milestones": {
+      "5%": 84.7,
+      "10%": 80.3,
+      "15%": 75.8,
+      "20%": 71.4
+    }
+  },
+  {
+    "id": "1b22c84c-6b70-4515-961d-f14eac7562c4",
+    "name": "Player 15",
+    "teamId": "3",
+    "baselineWeight": 148.4,
+    "seasonStartWeight": 147.6,
+    "height": 194,
+    "weight": 146.0,
+    "BMI": 38.8,
+    "BMI_Target": 94.1,
+    "percentLost": 1.1,
+    "milestones": {
+      "5%": 140.2,
+      "10%": 132.8,
+      "15%": 125.5,
+      "20%": 118.1
+    }
+  },
+  {
+    "id": "bd067e1f-15c8-4314-b484-a09be397facb",
+    "name": "Player 16",
+    "teamId": "4",
+    "baselineWeight": 114.5,
+    "seasonStartWeight": 108.2,
+    "height": 178,
+    "weight": 105.6,
+    "BMI": 33.3,
+    "BMI_Target": 79.2,
+    "percentLost": 2.4,
+    "milestones": {
+      "5%": 102.8,
+      "10%": 97.4,
+      "15%": 92.0,
+      "20%": 86.6
+    }
   }
 ]

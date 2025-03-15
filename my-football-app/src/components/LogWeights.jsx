@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+// import { updateTeamScores } from "../store/teamSlice"; // Ensure you have this Redux action
 
 const teamColors = {
   1: "Red",
@@ -9,27 +10,125 @@ const teamColors = {
 };
 
 const LogWeights = () => {
-  const players = useSelector((state) => state.players.players); // Get players from Redux store
-  const [weights, setWeights] = useState({}); // Store new weights
-  const [tracking, setTracking] = useState({}); // Store tracking checkbox state
+  const dispatch = useDispatch();
+  const players = useSelector((state) => state.players.players);
 
-  // Sort players by teamId
+  const [playerUpdates, setPlayerUpdates] = useState({});
+
   const sortedPlayers = [...players].sort((a, b) => a.teamId - b.teamId);
 
-  // Handle weight input
-  const handleWeightChange = (playerId, newWeight) => {
-    setWeights((prev) => ({
+  const handleUpdate = (playerId, key, value) => {
+    setPlayerUpdates((prev) => ({
       ...prev,
-      [playerId]: newWeight,
+      [playerId]: {
+        ...prev[playerId],
+        [key]: value,
+      },
     }));
   };
 
-  // Handle tracking checkbox
-  const handleTrackingChange = (playerId) => {
-    setTracking((prev) => ({
+  const handleMilestoneCheck = (playerId) => {
+    const updates = playerUpdates[playerId] || {};
+    const newWeight = updates.newWeight;
+    if (!newWeight) return;
+
+    const updatedPlayer = players.find((p) => p.id === playerId);
+    if (!updatedPlayer) return;
+
+    let milestoneHit = false;
+
+    if (Array.isArray(updatedPlayer.milestoneWeights)) {
+      for (let milestone of updatedPlayer.milestoneWeights) {
+        if (newWeight <= milestone && !playerUpdates[playerId]?.milestone) {
+          milestoneHit = true;
+          alert(`${updatedPlayer.name} has hit a milestone! 🎉`);
+          break;
+        }
+      }
+    }
+
+    if (
+      typeof updatedPlayer.BMI_Target === "number" &&
+      newWeight <= updatedPlayer.BMI_Target &&
+      !playerUpdates[playerId]?.milestone
+    ) {
+      milestoneHit = true;
+      alert(`${updatedPlayer.name} has hit a healthy BMI! 🎉`);
+    }
+
+    setPlayerUpdates((prev) => ({
       ...prev,
-      [playerId]: !prev[playerId],
+      [playerId]: {
+        ...prev[playerId],
+        milestone: milestoneHit,
+      },
     }));
+  };
+
+  const handleSubmit = () => {
+    const teamResults = {};
+
+    sortedPlayers.forEach((player) => {
+      const updates = playerUpdates[player.id] || {};
+      const newWeight = updates.newWeight;
+      const tracking = updates.tracking || false;
+      const milestone = updates.milestone || false;
+
+      if (!newWeight) return;
+
+      const weightChange = parseFloat((newWeight - player.weight).toFixed(1));
+
+      if (!teamResults[player.teamId]) {
+        teamResults[player.teamId] = {
+          teamId: player.teamId,
+          lostWeightCount: 0,
+          maintainedWeightCount: 0,
+          gainedWeightCount: 0,
+          trackedCount: 0,
+          ownGoalCount: 0,
+          milestoneCount: 0,
+          goals: 0,
+          totalScore: 0, // ✅ New total score field
+        };
+      }
+
+      if (weightChange < 0) teamResults[player.teamId].lostWeightCount++;
+      if (weightChange === 0)
+        teamResults[player.teamId].maintainedWeightCount++;
+      if (weightChange > 0) teamResults[player.teamId].gainedWeightCount++;
+      if (tracking) teamResults[player.teamId].trackedCount++;
+      if (milestone) teamResults[player.teamId].milestoneCount++;
+
+      if (newWeight > player.seasonStartWeight) {
+        teamResults[player.teamId].ownGoalCount++;
+      }
+    });
+
+    Object.keys(teamResults).forEach((teamId) => {
+      let { lostWeightCount, trackedCount, ownGoalCount, milestoneCount } =
+        teamResults[teamId];
+
+      if (lostWeightCount >= 3) teamResults[teamId].goals += 1;
+      if (lostWeightCount >= 5) teamResults[teamId].goals += 2;
+      if (lostWeightCount >= 7) teamResults[teamId].goals += 3;
+
+      if (trackedCount >= 1 && trackedCount <= 3)
+        teamResults[teamId].goals += 1;
+      if (trackedCount >= 4 && trackedCount <= 6)
+        teamResults[teamId].goals += 2;
+      if (trackedCount >= 7) teamResults[teamId].goals += 3;
+
+      teamResults[teamId].goals += milestoneCount * 3;
+
+      // ✅ Calculate totalScore (all goals minus own goals)
+      teamResults[teamId].totalScore = teamResults[teamId].goals - ownGoalCount;
+    });
+
+    console.log("Final Team Results:", teamResults);
+
+    dispatch(updateTeamScores(teamResults));
+
+    setPlayerUpdates({});
   };
 
   return (
@@ -56,10 +155,10 @@ const LogWeights = () => {
           </thead>
           <tbody>
             {sortedPlayers.map((player) => {
-              const currentWeight = player.weight;
-              const newWeight = weights[player.id] || "";
+              const updates = playerUpdates[player.id] || {};
+              const newWeight = updates.newWeight || "";
               const weightChange = newWeight
-                ? (newWeight - currentWeight).toFixed(1)
+                ? (newWeight - player.weight).toFixed(1)
                 : null;
               const changeColor =
                 weightChange < 0
@@ -77,7 +176,7 @@ const LogWeights = () => {
                     {teamColors[player.teamId] || "Unknown"}
                   </td>
                   <td className="border border-gray-300 px-4 py-2">
-                    {currentWeight}
+                    {player.weight}
                   </td>
                   <td className="border border-gray-300 px-4 py-2">
                     <input
@@ -86,18 +185,22 @@ const LogWeights = () => {
                       placeholder="Enter weight"
                       value={newWeight}
                       onChange={(e) =>
-                        handleWeightChange(
+                        handleUpdate(
                           player.id,
+                          "newWeight",
                           parseFloat(e.target.value) || ""
                         )
                       }
+                      onBlur={() => handleMilestoneCheck(player.id)}
                     />
                   </td>
                   <td className="border border-gray-300 px-4 py-2 text-center">
                     <input
                       type="checkbox"
-                      checked={!!tracking[player.id]}
-                      onChange={() => handleTrackingChange(player.id)}
+                      checked={updates.tracking || false}
+                      onChange={() =>
+                        handleUpdate(player.id, "tracking", !updates.tracking)
+                      }
                       className="w-5 h-5"
                     />
                   </td>
@@ -115,6 +218,15 @@ const LogWeights = () => {
             })}
           </tbody>
         </table>
+      </div>
+
+      <div className="text-center mt-6">
+        <button
+          onClick={handleSubmit}
+          className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition"
+        >
+          Submit Weights
+        </button>
       </div>
     </div>
   );

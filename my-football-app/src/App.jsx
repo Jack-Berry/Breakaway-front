@@ -21,7 +21,6 @@ const App = () => {
   if (players == null || players.length === 0) {
     return (
       <div>
-        <h1>Football Weight Loss League</h1>
         <p>Loading player data...</p>
       </div>
     );
@@ -29,10 +28,18 @@ const App = () => {
 
   return (
     <div>
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/player-weights">Add Player Weights</Link> |{" "}
-        <Link to="/pitch-results">Add Pitch Results</Link>
+      <nav className="p-4 bg-red-400 flex flex-row justify-between">
+        <Link to="/" className="text-white text-xl">
+          Home
+        </Link>{" "}
+        |{" "}
+        <Link to="/player-weights" className="text-white text-xl">
+          Add Player Weights
+        </Link>{" "}
+        |{" "}
+        <Link to="/pitch-results" className="text-white text-xl">
+          Add Pitch Results
+        </Link>
       </nav>
 
       <Routes>

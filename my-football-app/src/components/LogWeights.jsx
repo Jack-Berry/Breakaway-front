@@ -11,6 +11,7 @@ const teamColors = {
 const LogWeights = () => {
   const players = useSelector((state) => state.players.players); // Get players from Redux store
   const [weights, setWeights] = useState({}); // Store new weights
+  const [tracking, setTracking] = useState({}); // Store tracking checkbox state
 
   // Sort players by teamId
   const sortedPlayers = [...players].sort((a, b) => a.teamId - b.teamId);
@@ -20,6 +21,14 @@ const LogWeights = () => {
     setWeights((prev) => ({
       ...prev,
       [playerId]: newWeight,
+    }));
+  };
+
+  // Handle tracking checkbox
+  const handleTrackingChange = (playerId) => {
+    setTracking((prev) => ({
+      ...prev,
+      [playerId]: !prev[playerId],
     }));
   };
 
@@ -41,6 +50,7 @@ const LogWeights = () => {
               <th className="border border-gray-300 px-4 py-2">
                 New Weight (kg)
               </th>
+              <th className="border border-gray-300 px-4 py-2">Tracking</th>
               <th className="border border-gray-300 px-4 py-2">Change</th>
             </tr>
           </thead>
@@ -81,6 +91,14 @@ const LogWeights = () => {
                           parseFloat(e.target.value) || ""
                         )
                       }
+                    />
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2 text-center">
+                    <input
+                      type="checkbox"
+                      checked={!!tracking[player.id]}
+                      onChange={() => handleTrackingChange(player.id)}
+                      className="w-5 h-5"
                     />
                   </td>
                   <td

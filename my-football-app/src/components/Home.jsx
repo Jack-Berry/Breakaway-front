@@ -3,10 +3,10 @@ import "../index.css";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Football Weight Loss League</h1>
-      <button onClick={() => console.log(players)}>Log Weight</button>
-      <h1 className="text-3xl font-bold text-blue-500">Tailwind is Working!</h1>
+    <div className="flex flex-col items-center justify-center h-screen w-screen">
+      <h1 className="text-3xl font-bold text-red-700">
+        Football Weight Loss League
+      </h1>
       <p>Loaded</p>
     </div>
   );

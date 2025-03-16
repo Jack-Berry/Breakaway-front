@@ -68,6 +68,10 @@ const resultsSlice = createSlice({
       // **Recalculate Combined Score**
       updateCombinedScore(state, week);
     },
+    // **NEW ACTION: Load Fake Results at Startup**
+    loadFakeResults: (state, action) => {
+      state.results = action.payload;
+    },
   },
 });
 
@@ -103,5 +107,6 @@ const updateCombinedScore = (state, week) => {
   state.results[`GW${week}`].push({ type: "Combined", data: combinedData });
 };
 
-export const { updateWeightScores, updatePitchScores } = resultsSlice.actions;
+export const { updateWeightScores, updatePitchScores, loadFakeResults } =
+  resultsSlice.actions;
 export default resultsSlice.reducer;

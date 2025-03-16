@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPlayers } from "./store/playerSlice";
 import { setFixtures } from "./store/leagueSlice";
+import { loadFakeResults } from "./store/resultsSlice";
 import playerData from "./fakeData/fake_players.json";
 import fixtureData from "./fakeData/fake_fixtures.json";
+import resultData from "./fakeData/fake_results.json";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import LogWeights from "./components/LogWeights";
@@ -18,6 +20,7 @@ const App = () => {
     setTimeout(() => {
       dispatch(setPlayers(playerData));
       dispatch(setFixtures(fixtureData));
+      dispatch(loadFakeResults(resultData));
     }, 500); // Simulated delay
   }, [dispatch]);
 

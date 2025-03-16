@@ -1,6 +1,7 @@
 import React from "react";
 import "../index.css";
 import Fixtures from "./Fixtures";
+import League from "./League";
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
       <h1 className="text-3xl font-bold text-red-700">
         Football Weight Loss League
       </h1>
-      <p>Loaded</p>
+      <League />
       <Fixtures />
     </div>
   );

@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPlayers } from "./store/playerSlice";
+import { setFixtures } from "./store/leagueSlice";
 import playerData from "./fakeData/fake_players.json";
+import fixtureData from "./fakeData/fake_fixtures.json";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import LogWeights from "./components/LogWeights";
@@ -15,6 +17,7 @@ const App = () => {
     // Simulate an API call with a timeout
     setTimeout(() => {
       dispatch(setPlayers(playerData));
+      dispatch(setFixtures(fixtureData));
     }, 500); // Simulated delay
   }, [dispatch]);
 

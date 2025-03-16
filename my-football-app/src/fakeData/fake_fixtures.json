@@ -1,0 +1,98 @@
+[
+  {
+    "week": 1,
+    "date": "2024-04-10",
+    "matches": [
+      { "time": "20:30", "home": "Red", "away": "Blue" },
+      { "time": "21:00", "home": "Green", "away": "Black" }
+    ]
+  },
+  {
+    "week": 2,
+    "date": "2024-04-17",
+    "matches": [
+      { "time": "20:30", "home": "Red", "away": "Green" },
+      { "time": "21:00", "home": "Blue", "away": "Black" }
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2024-04-24",
+    "matches": [
+      { "time": "20:30", "home": "Red", "away": "Black" },
+      { "time": "21:00", "home": "Blue", "away": "Green" }
+    ]
+  },
+  {
+    "week": 4,
+    "date": "2024-05-01",
+    "matches": [
+      { "time": "20:30", "home": "Blue", "away": "Red" },
+      { "time": "21:00", "home": "Black", "away": "Green" }
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2024-05-08",
+    "matches": [
+      { "time": "20:30", "home": "Green", "away": "Red" },
+      { "time": "21:00", "home": "Black", "away": "Blue" }
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2024-05-15",
+    "matches": [
+      { "time": "20:30", "home": "Black", "away": "Red" },
+      { "time": "21:00", "home": "Green", "away": "Blue" }
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2024-05-22",
+    "matches": [
+      { "time": "20:30", "home": "Red", "away": "Blue" },
+      { "time": "21:00", "home": "Green", "away": "Black" }
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2024-05-29",
+    "matches": [
+      { "time": "20:30", "home": "Red", "away": "Green" },
+      { "time": "21:00", "home": "Blue", "away": "Black" }
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2024-06-05",
+    "matches": [
+      { "time": "20:30", "home": "Red", "away": "Black" },
+      { "time": "21:00", "home": "Blue", "away": "Green" }
+    ]
+  },
+  {
+    "week": 10,
+    "date": "2024-06-12",
+    "matches": [
+      { "time": "20:30", "home": "Blue", "away": "Red" },
+      { "time": "21:00", "home": "Black", "away": "Green" }
+    ]
+  },
+  {
+    "week": 11,
+    "date": "2024-06-19",
+    "matches": [
+      { "time": "20:30", "home": "Green", "away": "Red" },
+      { "time": "21:00", "home": "Black", "away": "Blue" }
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2024-06-26",
+    "matches": [
+      { "time": "20:30", "home": "Black", "away": "Red" },
+      { "time": "21:00", "home": "Green", "away": "Blue" }
+    ]
+  }
+]

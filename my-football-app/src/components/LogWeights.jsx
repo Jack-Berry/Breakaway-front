@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { updateTeamScores } from "../store/teamSlice"; // Ensure you have this Redux action
+import { updateWeightScores } from "../store/resultsSlice"; // Ensure this action exists
 
 const teamColors = {
   1: "Red",
@@ -12,11 +12,18 @@ const teamColors = {
 const LogWeights = () => {
   const dispatch = useDispatch();
   const players = useSelector((state) => state.players.players);
+  const fixtures = useSelector((state) => state.league.fixtures);
 
+  const [selectedWeek, setSelectedWeek] = useState(1);
   const [playerUpdates, setPlayerUpdates] = useState({});
 
+  // Get unique weeks for dropdown
+  const uniqueWeeks = fixtures.map((fixture) => fixture.week);
+
+  // Sort players by team
   const sortedPlayers = [...players].sort((a, b) => a.teamId - b.teamId);
 
+  // Handle input updates (weight & tracking)
   const handleUpdate = (playerId, key, value) => {
     setPlayerUpdates((prev) => ({
       ...prev,
@@ -27,6 +34,7 @@ const LogWeights = () => {
     }));
   };
 
+  // **🏆 Check for Milestones**
   const handleMilestoneCheck = (playerId) => {
     const updates = playerUpdates[playerId] || {};
     const newWeight = updates.newWeight;
@@ -37,6 +45,7 @@ const LogWeights = () => {
 
     let milestoneHit = false;
 
+    // Check for milestone achievements
     if (Array.isArray(updatedPlayer.milestoneWeights)) {
       for (let milestone of updatedPlayer.milestoneWeights) {
         if (newWeight <= milestone && !playerUpdates[playerId]?.milestone) {
@@ -47,6 +56,7 @@ const LogWeights = () => {
       }
     }
 
+    // Check for BMI milestone
     if (
       typeof updatedPlayer.BMI_Target === "number" &&
       newWeight <= updatedPlayer.BMI_Target &&
@@ -65,10 +75,11 @@ const LogWeights = () => {
     }));
   };
 
+  // **🏆 Process & Submit Weight Scores**
   const handleSubmit = () => {
     const teamResults = {};
 
-    sortedPlayers.forEach((player) => {
+    players.forEach((player) => {
       const updates = playerUpdates[player.id] || {};
       const newWeight = updates.newWeight;
       const tracking = updates.tracking || false;
@@ -88,7 +99,7 @@ const LogWeights = () => {
           ownGoalCount: 0,
           milestoneCount: 0,
           goals: 0,
-          totalScore: 0, // ✅ New total score field
+          totalScore: 0,
         };
       }
 
@@ -104,6 +115,7 @@ const LogWeights = () => {
       }
     });
 
+    // **Apply Goal System**
     Object.keys(teamResults).forEach((teamId) => {
       let { lostWeightCount, trackedCount, ownGoalCount, milestoneCount } =
         teamResults[teamId];
@@ -120,14 +132,16 @@ const LogWeights = () => {
 
       teamResults[teamId].goals += milestoneCount * 3;
 
-      // ✅ Calculate totalScore (all goals minus own goals)
+      // Total Score Calculation
       teamResults[teamId].totalScore = teamResults[teamId].goals - ownGoalCount;
     });
 
     console.log("Final Team Results:", teamResults);
 
-    dispatch(updateTeamScores(teamResults));
+    // Dispatch to Redux (Pass week number)
+    dispatch(updateWeightScores({ week: selectedWeek, results: teamResults }));
 
+    // Reset player updates
     setPlayerUpdates({});
   };
 
@@ -137,6 +151,23 @@ const LogWeights = () => {
         Log Player Weights
       </h1>
 
+      {/* Week Selector */}
+      <div className="text-center mb-4">
+        <label className="font-semibold mr-2">Select Week:</label>
+        <select
+          value={selectedWeek}
+          onChange={(e) => setSelectedWeek(parseInt(e.target.value))}
+          className="p-2 border rounded"
+        >
+          {uniqueWeeks.map((week) => (
+            <option key={week} value={week}>
+              Week {week}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Players Table */}
       <div className="overflow-x-auto">
         <table className="w-full border-collapse border border-gray-300">
           <thead>
@@ -154,7 +185,7 @@ const LogWeights = () => {
             </tr>
           </thead>
           <tbody>
-            {sortedPlayers.map((player) => {
+            {players.map((player) => {
               const updates = playerUpdates[player.id] || {};
               const newWeight = updates.newWeight || "";
               const weightChange = newWeight
